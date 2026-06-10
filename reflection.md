@@ -5,18 +5,26 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+    When I first ran the game it told me that my guess of 40 should be higher. My next input was 50 telling me to guess higher when it should have been lower. The next input I put was 80 again telling me to guess higher. When I inputed 100 it told me to guess higher again. On my last attempt I guessed 135 and thats when it told me to go guess lower and revealed that the number was 38. Giving me a score of -5. 
+
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+    The hints kept telling me to guess higher when at my second attempt should have said for me to guess lower. 
+    The score is negative after not being able to guess the number
+    Does not allow for you to actually start the game over
+
 
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
-| Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| Input         | Expected Behavior   |      Actual Behavior     | Console Output / Error |
+|---------------|---------------------|--------------------------|------------------------|
+|  guess of 40  |     "Go LOWER" hint    "Go HIGHER" hint shown           none
+|  guess of 50  |     "Go LOWER" hint    "Go HIGHER" hint shown           none
+|  last guess   |                                                       preventOverflow
+    of 135      |     "Go LOWER" hint    "Go LOWER" hint shown       modifier is required
+
 
 ---
 
