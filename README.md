@@ -45,7 +45,7 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 5. The score works by updating after each attempt. (In example was 6 attempts on easy mode)
 6. Click on "New Game" button restarts the game.
 
-**Screenshot** *(optional)*: <img scr="./assests/Screenshot 2026-06-20 at 4.46.41 PM.png/" /><!-- Insert a screenshot of your fixed, winning game here -->
+**Screenshot** *(optional)*: <img src="./assests/Screenshot 2026-06-20 at 4.46.41 PM.png/" /> <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
