@@ -28,10 +28,15 @@ attempt_limit = attempt_limit_map[difficulty]
 
 low, high = get_range_for_difficulty(difficulty)
 
+#FIXME: The range does not change based on difficulty 
+#FIX w/ AI: The range did change here, but the secret and the info text below
+#           ignored it. Now we regenerate the secret whenever the difficulty
+#           (and therefore the range) changes.
 st.sidebar.caption(f"Range: {low} to {high}")
 st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 
-if "secret" not in st.session_state:
+if "secret" not in st.session_state or st.session_state.get("difficulty") != difficulty:
+    st.session_state.difficulty = difficulty
     st.session_state.secret = random.randint(low, high)
 
 #FIX: attempts stated at 1 so changed it to 0
@@ -50,7 +55,8 @@ if "history" not in st.session_state:
 st.subheader("Make a guess")
 
 st.info(
-    f"Guess a number between 1 and 100. "
+    #Changed description to the difficulty range 
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
@@ -99,7 +105,7 @@ if st.session_state.status != "playing":
 if submit:
     st.session_state.attempts += 1
 
-    ok, guess_int, err = parse_guess(raw_guess)
+    ok, guess_int, err = parse_guess(raw_guess, low, high)
 
     if not ok:
         st.session_state.history.append(raw_guess)
