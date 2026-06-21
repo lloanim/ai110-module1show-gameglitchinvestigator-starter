@@ -62,17 +62,17 @@ Document at least 3 bugs you found. Add rows as needed.
 
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
-    -- One test I ran using pytest was test_hint_direction_matches_guess() where it tested to see if the guess is higher than secret then the output is "Go LOWER". Using the guess of 60 and secret of 50 it passed. It also checks if the guess is lower than the secret then the output is "Go HIGHER". Using the guess of 40 and secret of 50, it also passed. 
+    -- One test I ran using pytest was test_hint_direction_matches_guess() where it tested to see if the guess is higher than secret then the output is "Go LOWER". Using the guess of 60 and secret of 50 it passed. It also checks if the guess is lower than the secret then the output is "Go HIGHER". Using the guess of 40 and secret of 50, it also passed. This tells me that the change in my code fixed the first bug the game had of misdirection and issue with string conversion of the guess on even attempts. 
 
 - Did AI help you design or understand any tests? How?
-    -- Yes AI helped me gain a deeper understanding of tests because it reminded me about boundary testing and testing just below and above the accepted range. I had previously learned about this in my uni class but was not sure how it would actually be implement which I can see how with this example where I had to test within range. As well with the points tests where I test in first win (test_update_score_win_awards_points()), in no wins (test_update_score_never_goes_negative()), and in late wins not going below 10 points (test_update_score_win_has_minimum_floor()).
+    -- Yes AI helped me gain a deeper understanding of tests because it reminded me about boundary testing and testing just below and above the accepted range. I had previously learned about this in my university class but was not sure how it would actually be implement which I can see how with this example where I had to test within range. As well with the points tests where I test in first win (test_update_score_win_awards_points()), in no wins (test_update_score_never_goes_negative()), and in late wins not going below 10 points (test_update_score_win_has_minimum_floor()). In fixing the third bug AI helped with tests that is inclusive bounds, a test below range, a test above range and more. Giving me a better understanding of how I should be thinking of testing for a function created. 
 
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-    --- I would explain Streamlit "reruns" as stopping the file from continuing its execution and restarting back to the top of the file. Reading the file over again. A session state is where information is active and used throughout the file to update changes through events that occur to the state as it reads through the file. The information is saved even after the script reruns again.
+    --- I would explain Streamlit "reruns" as stopping the file from continuing its execution and restarting back to the top of the file. Reading the file over again or reexucating it. A session state is where information is active and used throughout the file to update changes through events that occur to the state as it reads through the file. The information is saved even after the script reruns again.
 
 ---
 
@@ -83,7 +83,7 @@ Document at least 3 bugs you found. Add rows as needed.
     --- One habit I used from this project was commenting the possible bugs I see myself and asking questions on parts I did not understand. Then using AI to look at my comments and explain what I did not understand but as well help fix the bugs. When I did not understand a suggestion I would ask follow up questions to better understand its suggestions. 
 
 - What is one thing you would do differently next time you work with AI on a coding task?
-    --- One thing I would do differently next time is fully reading what the AI gives as comments because at the end it, it would give other possible errors with the one I am looking at. 
+    --- One thing I would do differently next time is fully reading what the AI gives as comments because at the end, it would give other possible errors with the one I am looking at. 
 
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
-    --- It made me realize the more functionality of AI generated code. I did not know that AI can change functions from one file to another but definitely needs careful observation because it may not move everything and it may suggest to delete code that is needed. For example it suggested to delete a moved function but also wanted to delete an import of another function that was already moved. 
+    --- It made me realize the more functionality of AI generated code. I did not know that AI can move functions from one file to another but definitely needs careful observation because it may not move everything and it may suggest to delete code that is needed. For example, it had suggested to delete a moved function but also wanted to delete an import of another function that was already moved. I had to make sure this did not delete any necessary code.
